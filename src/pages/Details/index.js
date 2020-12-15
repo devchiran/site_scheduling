@@ -1,6 +1,6 @@
 import React from 'react'
-import DetailsHeader from '../components/DetailsHeader'
-import InfoCard from '../components/InfoCard'
+import DetailsHeader from '../../components/DetailsHeader'
+import InfoCard from '../../components/InfoCard'
 
 const Details = (props) => {
 

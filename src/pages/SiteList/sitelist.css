@@ -1,0 +1,5 @@
+.refinement-wrapper {
+    position: sticky;
+    top: 47px;
+    z-index: 1;
+}
