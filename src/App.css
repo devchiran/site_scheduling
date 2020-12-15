@@ -9,28 +9,27 @@ body {
 img {
     width: 100%;
     height: 100%;
+    font-size: 8px;
 }
 
 .profile-img {
     width: 60px;
     height: 60px;
+    object-fit: cover;
 }
 
 .summary-img {
     height: 25vh;
 }
 
-.summary-img img {
-    object-fit: cover;
-}
-
-.profile-img.light img {
+.profile-img.light {
     background-color: white;
 }
 
-.profile-img img {
+.profile-img {
     border-radius: 50%;
     border: 1px solid #000000;
+    overflow: hidden;
 }
 
 .form-group {

@@ -9,12 +9,12 @@ import {
     faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons'
 
-const DetailsList = ({ name, jobtitle, contact, email, address, image }) => {
+const DetailsList = ({ title, contacts, images, jobtitle, contact, email, address, image }) => {
     return (
         <Container className="p-0">
             <Row>
                 <Col xs={12} md={6} className="p-0 border-dark border-bottom">
-                    <Image type="summary-img" imgsrc={image} alttext={name} />
+                    <Image type="summary-img" imgsrc={images[0]} alttext={title} />
                 </Col>
                 <div className="col-12 col-md-6">
                     <ListGroup>
@@ -23,8 +23,8 @@ const DetailsList = ({ name, jobtitle, contact, email, address, image }) => {
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
                             <div className="item-detail col-10 flex-grow-1">
-                                <h6 className="mb-1 sd-title">{name}</h6>
-                                <p className="mb-0 text-muted sd-subtitle">{jobtitle}</p>
+                                <h6 className="mb-1 sd-title">{contacts.main.firstName} {contacts.main.lastName}</h6>
+                                <p className="mb-0 text-muted sd-subtitle">{contacts.main.jobTitle}</p>
                             </div>
                         </ListGroup.Item>
                         <ListGroup.Item className="d-flex py-3 border-0">
@@ -32,7 +32,7 @@ const DetailsList = ({ name, jobtitle, contact, email, address, image }) => {
                                 <FontAwesomeIcon icon={faPhoneAlt} />
                             </div>
                             <div className="item-detail col-10 flex-grow-1">
-                                <p className="mb-1 sd-title">{contact}</p>
+                                <p className="mb-1 sd-title">{contacts.main.phoneNumber}</p>
                             </div>
                         </ListGroup.Item>
                         <ListGroup.Item className="d-flex py-3 border-0">
@@ -40,7 +40,7 @@ const DetailsList = ({ name, jobtitle, contact, email, address, image }) => {
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </div>
                             <div className="item-detail col-10 flex-grow-1">
-                                <p className="mb-1 sd-title">{email}</p>
+                                <p className="mb-1 sd-title">{contacts.main.email}</p>
                             </div>
                         </ListGroup.Item>
                         <ListGroup.Item className="d-flex py-3 border-0">
@@ -48,7 +48,13 @@ const DetailsList = ({ name, jobtitle, contact, email, address, image }) => {
                                 <FontAwesomeIcon icon={faMapMarkerAlt} />
                             </div>
                             <div className="item-detail col-10 flex-grow-1">
-                                <p className="mb-1 sd-title">{address}</p>
+                                <p className="mb-1 sd-title">
+                                    {contacts.main.address.street},<br />
+                                    {contacts.main.address.city},<br />
+                                    {contacts.main.address.state},<br />
+                                    {contacts.main.address.country}<br />
+                                    Zip Code-{contacts.main.address.zipCode}
+                                </p>
                             </div>
                         </ListGroup.Item>
                     </ListGroup>

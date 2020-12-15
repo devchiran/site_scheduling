@@ -5,7 +5,7 @@ export const fetchContacts = () => {
   return (dispatch) => {
     dispatch(fetchContactsRequest())
     axios
-    .get('http://localhost:3333/sitelist')
+    .get('https://tracktik-challenge.staffr.com/sites')
     .then(response => {
       const contacts = response.data
       dispatch(fetchContactsSuccess(contacts))
