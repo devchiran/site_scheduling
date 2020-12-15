@@ -8,13 +8,15 @@ import {
     faEnvelope,
     faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons'
+import Slide from "../Slide"
 
-const DetailsList = ({ title, contacts, images, jobtitle, contact, email, address, image }) => {
+const DetailsList = ({ title, contacts, images }) => {
     return (
         <Container className="p-0">
             <Row>
                 <Col xs={12} md={6} className="p-0 border-dark border-bottom">
-                    <Image type="summary-img" imgsrc={images[0]} alttext={title} />
+                    {/* <Image type="summary-img" imgsrc={images[0]} alttext={title} /> */}
+                    <Slide imgUrls={images} />
                 </Col>
                 <div className="col-12 col-md-6">
                     <ListGroup>
