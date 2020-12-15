@@ -4,22 +4,6 @@ This project is create using [Reactjs](https://reactjs.org/docs/getting-started.
 
 
 
-### `Prerequisites`
-Json-server is required to run the app.\
-\
-If not install run the below command to install.
-```
-npm install -g json-server
-```
-Once json-server is available, goto the project root directory.\
-Run the below command to start json-server
-
-```
-npm run json-server
-```
-Open [http://localhost:3333](http://localhost:3333) to view the json-server in the browser.
-
-
 ### `Run the app`
 
 ```
