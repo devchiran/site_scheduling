@@ -1,14 +1,17 @@
 import axios from 'axios'
 import * as actions from './contactType'
 
-export const fetchContacts = () => {
+export const fetchContacts = (pageNum, recordsLength) => {
   return (dispatch) => {
     dispatch(fetchContactsRequest())
     axios
-    .get('https://tracktik-challenge.staffr.com/sites')
+    .get(`https://tracktik-challenge.staffr.com/sites?_expand=client&_page=${pageNum}&_limit=${recordsLength}`)
     .then(response => {
       const contacts = response.data
-      dispatch(fetchContactsSuccess(contacts))
+      // Below logic is written as total records length is not returnned in the api response
+      // Else the api quary parameter can be replaced by [_start=xx&_limit=yy]
+      const hasContacts = response.data.length === recordsLength ? true : false
+      dispatch(fetchContactsSuccess(contacts, hasContacts))
     })
     .catch(error => {
       const errormsg = error.message
@@ -23,10 +26,10 @@ export const fetchContactsRequest = () => {
   }
 }
 
-export const fetchContactsSuccess = contacts => {
+export const fetchContactsSuccess = (contacts, hasContacts) => {
   return {
     type: actions.FETCH_CONTACTS_SUCCESS,
-    payload: contacts
+    payload: { contacts, hasContacts }
   }
 }
 

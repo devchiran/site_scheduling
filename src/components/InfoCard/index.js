@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from '../common/image'
 import { ListGroup, Row, Col, Container } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -10,17 +9,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import Slide from "../Slide"
 
-const DetailsList = ({ title, contacts, images }) => {
+const DetailsList = ({ contacts, images }) => {
     return (
         <Container className="p-0">
-            <Row>
-                <Col xs={12} md={6} className="p-0 border-dark border-bottom">
-                    {/* <Image type="summary-img" imgsrc={images[0]} alttext={title} /> */}
+            <Row className="m-0">
+                <Col xs={12} md={6} className="overflow-hidden p-0 border-dark border-bottom" value={ images } text>
                     <Slide imgUrls={images} />
                 </Col>
                 <div className="col-12 col-md-6">
                     <ListGroup>
-                        <ListGroup.Item className="d-flex mt-3 py-3 border-0">
+                        <ListGroup.Item className="d-flex mt-3 py-3 p-0 border-0">
                             <div className="col-2 text-center">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
@@ -29,7 +27,7 @@ const DetailsList = ({ title, contacts, images }) => {
                                 <p className="mb-0 text-muted sd-subtitle">{contacts.main.jobTitle}</p>
                             </div>
                         </ListGroup.Item>
-                        <ListGroup.Item className="d-flex py-3 border-0">
+                        <ListGroup.Item className="d-flex py-3 p-0 border-0">
                             <div className="col-2 text-center">
                                 <FontAwesomeIcon icon={faPhoneAlt} />
                             </div>
@@ -37,7 +35,7 @@ const DetailsList = ({ title, contacts, images }) => {
                                 <p className="mb-1 sd-title">{contacts.main.phoneNumber}</p>
                             </div>
                         </ListGroup.Item>
-                        <ListGroup.Item className="d-flex py-3 border-0">
+                        <ListGroup.Item className="d-flex py-3 p-0 border-0">
                             <div className="col-2 text-center">
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </div>
@@ -45,7 +43,7 @@ const DetailsList = ({ title, contacts, images }) => {
                                 <p className="mb-1 sd-title">{contacts.main.email}</p>
                             </div>
                         </ListGroup.Item>
-                        <ListGroup.Item className="d-flex py-3 border-0">
+                        <ListGroup.Item className="d-flex py-3 p-0 border-0">
                             <div className="col-2 text-center">
                                 <FontAwesomeIcon icon={faMapMarkerAlt} />
                             </div>

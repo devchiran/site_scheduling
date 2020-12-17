@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faSortAmountUp } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Form, Button } from 'react-bootstrap'
 
 const Refinement = () => {
@@ -21,7 +21,6 @@ const Refinement = () => {
             </div>
             <div className="refinement-filters col-7 text-right  p-0">
                 <Button className="btn-light btn-sm bg-transparent border-0">
-                    {/* <FontAwesomeIcon icon={faSortAmountUp} /> */}
                     <span className="sortbar my-1"></span>
                     <span className="sortbar my-1"></span>
                     <span className="sortbar my-1"></span>
