@@ -7,9 +7,9 @@ import { fetchContacts } from '../../redux'
 import { Waypoint } from 'react-waypoint';
 
 function List({ contactData, fetchContacts }) {
-    useEffect((contactData) => {
+    useEffect(() => {
         fetchContacts(contactData.pageNumber, contactData.recordsLength);
-    }, [fetchContacts])
+    }, [contactData.pageNumber, contactData.recordsLength, fetchContacts])
 
     const fetchMoreContacts = () => {
         fetchContacts(contactData.pageNumber, contactData.recordsLength);
